@@ -1,0 +1,64 @@
+<body>
+    <div class="Main-container">
+        <app-nav-amdmi></app-nav-amdmi>
+        <div class="container-login">
+            <div class="wrap-login">
+                <span class="login-form-title">Perfil de Usuario</span>
+                <div class="login-pic">
+                   
+                    <img src="https://firebasestorage.googleapis.com/v0/b/saint-michael-42350.appspot.com/o/Icon%2FimgPerfil.jpg?alt=media&token=46aeb7f5-c171-4fc0-ae47-202023bf82e3" >
+                </div>
+
+                <form class="login-form" (ngSubmit)="updatePassword()" [formGroup]="passwords" >
+                    
+                    <div class="wrap-input">
+                        <span class="">Nombre Completo</span>
+                        <input type="text" class="input"  name="email" placeholder="{{nombre}}" readonly required>
+                        <span class="focus-input"></span>
+                        <span class="symbol-input">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <div class="wrap-input">
+                        <span class="">Correo Electronico</span>
+                        <input type="text" class="input"  name="pass" placeholder="{{email}}" readonly required>
+                        <span class="focus-input"></span>
+                        <span class="symbol-input">
+                            <i class="fa fa-lock" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="wrap-input">
+                        <span class="">Nueva Contraseña</span>
+                        <input type="password" class="input" formControlName="password" name="pass" placeholder="Password" required>
+                        <span class="focus-input"></span>
+                        <span class="symbol-input">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <div class="wrap-input">
+                        <span class="">Verificacion de Contraseña</span>
+                        <input type="password" class="input" formControlName="Vpassword" name="pass" placeholder="Password" required>
+                        <span class="focus-input"></span>
+                        <span class="symbol-input">
+                            <i class="fa fa-lock" aria-hidden="true"></i>
+                        </span>
+                    </div>
+
+                    <div class="login-form-btn-container">
+                        <button type="submit" class="login-form-btn">Guardar</button>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+
+                </form>
+                
+            </div>
+        </div>
+    </div>
+
+</body>

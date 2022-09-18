@@ -1,0 +1,42 @@
+<body>
+    <div class="Main-container">
+        <div class="container-login">
+            <div class="wrap-login">
+
+                <div class="login-pic">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/saint-michael-42350.appspot.com/o/Icon%2FloginImg.jpg?alt=media&token=86429772-1455-45c7-8a5c-f40a007da6bd" >
+                </div>
+
+                <form class="login-form"  action="" [formGroup] = "infoLogin" (ngSubmit)="onSubmit()">
+                    <span class="login-form-title">BIENVENIDO</span>
+                    
+                    <div class="wrap-input">
+                        <input type="text" class="input" formControlName="email" name="email" placeholder="Email" required>
+                        <span class="focus-input"></span>
+                        <span class="symbol-input">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <div class="wrap-input">
+                        <input type="password" class="input" formControlName="password" name="pass" placeholder="Password" required>
+                        <span class="focus-input"></span>
+                        <span class="symbol-input">
+                            <i class="fa fa-lock" aria-hidden="true"></i>
+                        </span>
+                    </div>
+
+                    <div class="login-form-btn-container">
+                        <button type="submit" class="login-form-btn">Login</button>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+
+                </form>
+                
+            </div>
+        </div>
+    </div>
+
+</body>

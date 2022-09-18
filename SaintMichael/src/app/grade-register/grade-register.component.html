@@ -1,0 +1,69 @@
+<body>
+    <div class="Main-container">
+        <app-nav-amdmi></app-nav-amdmi>
+        <div class="container-elements">
+            <div class="wrap-register">
+
+                <form class="login-form" (ngSubmit)="Graderegister()" [formGroup]="crearCurso" >
+                    <span class="form-title">Crear Curso</span>
+
+                    <div class="wrap-input">
+                        <span class="">Nombre de la Instucion</span>
+                        <input type="text" class="input" formControlName="nombreInstitucion" name="name" placeholder="Nombre" required>
+                        <span class="focus-input"></span>
+                        <span class="symbol-input">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    
+                    <div class="wrap-input">
+                        <span class="">Grupo</span>
+                        <input type="text" class="input" formControlName="grupo" name="Intitucion" placeholder="Intitucion" required>
+                        <span class="focus-input"></span>
+                        <span class="symbol-input">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
+                    </div>
+
+                    <div class="wrap-input">
+                        <span class="">Curso</span>
+                        <input type="text" class="input" formControlName="curso" name="Telefono" placeholder="Telefono" required>
+                        <span class="focus-input"></span>
+                        <span class="symbol-input">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    
+                    <div class="wrap-input">
+                        <span class="">Fondo Distintivo</span>
+
+                        <select class="form-select" aria-label="Default select example" formControlName="fondo" >
+                            <option *ngFor="let item of colores " [ngValue]="item[1]">
+                                {{ item[0] }}
+                            </option>
+                          </select>
+                        
+                        <span class="focus-input"></span>
+                        <span class="symbol-input">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <div class="form-btn-container">
+                        <button type="submit" class="form-btn">Registrar</button>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+
+                </form>
+
+                  
+            </div>
+
+        </div>
+    </div>
+
+
+
+</body>

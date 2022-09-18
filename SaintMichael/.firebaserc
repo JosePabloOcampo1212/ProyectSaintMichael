@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "saint-michael-42350": {
+      "hosting": {
+        "SaintMichael": [
+          "saint-michael-42350"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "saint-michael-42350"
+  }
+}

@@ -1,0 +1,79 @@
+<body>
+    <div class="Main-container">
+        <app-nav-amdmi></app-nav-amdmi>
+        <div class="container-elements">
+            <div class="wrap-register">
+
+                <form class="login-form" (ngSubmit)="register()" [formGroup]="registrarEstudiante" >
+                    <span class="form-title">REGISTRAR ESTUDIANTE</span>
+
+                    <div class="wrap-input">
+                        <span class="">Nombre Completo</span>
+                        <input type="text" class="input" formControlName="nombre" name="name" placeholder="nombre" required>
+                        <span class="focus-input"></span>
+                        <span class="symbol-input">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    
+                    <div class="wrap-input">
+                        <span class="">Intitucion</span>
+                        <input type="text" class="input" formControlName="intitucion" name="intitucion" placeholder="Intitucion" required>
+                        <span class="focus-input"></span>
+                        <span class="symbol-input">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
+                    </div>
+
+                    <div class="wrap-input">
+                        <span class="">Telefono</span>
+                        <input type="text" class="input" formControlName="telefono" name="telefono" placeholder="Telefono" required>
+                        <span class="focus-input"></span>
+                        <span class="symbol-input">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
+                    </div>
+
+                    <div class="wrap-input">
+                        <span class="">Seccion</span>
+                        <input type="text" class="input" formControlName="seccion" name="seccion" placeholder="Seccion" required>
+                        <span class="focus-input"></span>
+                        <span class="symbol-input">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    
+                    <div class="wrap-input">
+                        <span class="">Curso</span>
+
+                        <select class="form-select" aria-label="Default select example" formControlName="curso" >
+                            <option *ngFor="let item of listCursos " [ngValue]="item.idCurso">
+                                {{ item.nombreInstitucion}} - {{ item.nombreCurso}} - {{ item.grupoCurso}}
+                            </option>
+                          </select>
+                        
+                        <span class="focus-input"></span>
+                        <span class="symbol-input">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
+                    </div>
+
+                    <div class="form-btn-container">
+                        <button type="submit" class="form-btn">Registrar</button>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+
+                </form>
+
+                  
+            </div>
+
+        </div>
+    </div>
+
+
+
+</body>

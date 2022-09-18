@@ -1,0 +1,54 @@
+<body>
+    <div class="Main-container">
+        <app-nav-amdmi></app-nav-amdmi>
+        <div class="container-elements">
+            <div class="wrap-register">
+
+                <form class="login-form" (ngSubmit)="register()" [formGroup]="registrarUsuario" >
+                    <span class="form-title">REGISTRAR PROFESOR</span>
+
+                    <div class="wrap-input">
+                        <span class="">Nombre Completo</span>
+                        <input type="text" class="input" formControlName="name" name="name" placeholder="Nombre" required>
+                        <span class="focus-input"></span>
+                        <span class="symbol-input">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    
+                    <div class="wrap-input">
+                        <span class="">Email</span>
+                        <input type="text" class="input" formControlName="email" name="email" placeholder="Email" required>
+                        <span class="focus-input"></span>
+                        <span class="symbol-input">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <div class="wrap-input">
+                        <span class="">Contraseña</span>
+                        <input type="password" class="input" formControlName="password" name="pass" placeholder="Contraseña" required>
+                        <span class="focus-input"></span>
+                        <span class="symbol-input">
+                            <i class="fa fa-lock" aria-hidden="true"></i>
+                        </span>
+                    </div>
+
+                    <div class="form-btn-container">
+                        <button type="submit" class="form-btn">Registrar</button>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+
+                </form>
+
+                  
+            </div>
+
+        </div>
+    </div>
+
+
+
+</body>

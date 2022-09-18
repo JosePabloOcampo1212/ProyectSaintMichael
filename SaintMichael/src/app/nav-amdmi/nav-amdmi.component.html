@@ -1,0 +1,26 @@
+
+  <div class="nav">
+    <input type="checkbox" id="nav-check">
+    <div class="nav-header">
+      <div class="nav-title">
+        <img  src="https://firebasestorage.googleapis.com/v0/b/saint-michael-42350.appspot.com/o/Icon%2Flogo.jpg?alt=media&token=871d1745-1b01-4593-9281-c72f0b120cc1" alt="" (click)="goHome()">
+      </div>
+    </div>
+    <div class="nav-btn">
+      <label for="nav-check">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+    </div>
+    
+    <div class="nav-links">
+      <a (click)="goRegisterTeacher()"  *ngIf="estado == true" >Registrar Profesor</a>
+      <a (click)="goRegisterEstudent()">Registrar Estudiante</a>
+      <a (click)="goCreateGrade()">Crear Curso</a>
+      <a href="" >Horario</a>
+      <a (click)="goProfile()">Perfil</a>
+      <a (click)="signOut()">Cerrar Sesion</a>
+    </div>
+  </div>
+  
