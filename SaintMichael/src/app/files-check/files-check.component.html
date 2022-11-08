@@ -1,0 +1,19 @@
+<body>
+    <div class="Main-container">
+        <app-nav-amdmi></app-nav-amdmi>
+        <div class="container-elements">
+            <div class="wrap">
+                <form class="login-form">
+                    <span class="login-form-title">Archivos</span>
+                <div class="form-group" *ngFor="let item of programas">
+                    <a  (click)="goFile(item[1])" target="_blank">{{item[0]}}</a>
+                </div>
+        
+                </form>
+
+        </div>
+    </div>
+</div>
+
+</body>
+

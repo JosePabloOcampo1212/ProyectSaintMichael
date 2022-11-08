@@ -1,0 +1,31 @@
+.Main-container{
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+.container-elements{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: #77c6fc ;
+}
+
+.wrap{
+    width: 100%;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 130px 130px 95px 95px;
+    align-items: center;
+    justify-content:baseline;
+    
+}
+

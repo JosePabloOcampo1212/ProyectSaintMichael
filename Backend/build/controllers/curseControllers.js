@@ -27,7 +27,17 @@ class CurseController {
     getOneCurse(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            const curso = yield database_1.default.query('SELECT * FROM cursos WHERE idProfesor = ?', [id], function (error, results, fields) {
+            const curso = yield database_1.default.query('SELECT * FROM cursos WHERE estadoCurso = True AND idProfesor = ?', [id], function (error, results, fields) {
+                if (error)
+                    throw error;
+                res.json(results);
+            });
+        });
+    }
+    getOneCursebyID(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { id } = req.params;
+            const curso = yield database_1.default.query('SELECT * FROM cursos WHERE idCurso = ?', [id], function (error, results, fields) {
                 if (error)
                     throw error;
                 res.json(results);
@@ -43,11 +53,14 @@ class CurseController {
     delete(req, res) {
         res.json({ text: 'se elimino' });
     }
-    update(req, res) {
+    updateCurse(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            yield database_1.default.query('UPDATE cursos set ? WHERE idCurso = ?', [req.body, id]);
-            res.json({ message: "The curse was Updated" });
+            yield database_1.default.query('UPDATE cursos set estadoCurso = False WHERE idCurso = ?', [id], function (error, results, fields) {
+                if (error)
+                    throw error;
+                res.json(results);
+            });
         });
     }
     getElementsCreateEstudent(req, res) {

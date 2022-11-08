@@ -1,0 +1,52 @@
+<div class="contenedor">
+    <span class="login-form-title">EVALUACIONES</span>
+
+    <table>
+        <thead>
+          <tr>
+            <th scope="col">Evaluaciones</th>
+            <th scope="col">Porcentaje Total</th>
+            <th scope="col"></th>
+            <th scope="col">Porcentaje Obtenido</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Account">Examenes</td>
+            <td data-label="Account">{{evaluacion[0].examen}} % </td>
+            <td data-label="Due Date"></td>
+            <td data-label="Due Date">{{exam}} %</td>
+          </tr>
+          <tr>
+            <td data-label="Account">Quices</td>
+            <td data-label="Account">{{evaluacion[0].quiz}} %</td>
+            <td data-label="Due Date"></td>
+            <td data-label="Due Date">{{quiz}} % </td>
+          </tr>
+          <tr>
+            <td data-label="Account">Tareas</td>
+            <td data-label="Account">{{evaluacion[0].tarea}} %</td>
+            <td data-label="Due Date"></td>
+            <td data-label="Due Date">{{tarea}}%</td>
+          </tr>
+          <tr>
+            <td data-label="Account">Proyectos</td>
+            <td data-label="Account">{{evaluacion[0].proyecto}} % </td>
+            <td data-label="Due Date"></td>
+            <td data-label="Due Date">{{proyec}} %</td>
+          </tr>
+          <tr>
+            <td data-label="Account">Cotidiano</td>
+            <td data-label="Account">{{evaluacion[0].cotidiano}} %</td>
+            <td data-label="Due Date"></td>
+            <td data-label="Due Date">{{cotidi}} %</td>
+          </tr>
+          <tr>
+            <td data-label="Account">Total</td>
+            <td data-label="Account">{{evaluacion[0].examen + evaluacion[0].quiz + evaluacion[0].tarea + evaluacion[0].proyecto +evaluacion[0].cotidiano}} %</td>
+            <td data-label="Due Date"></td>
+            <td data-label="Due Date">{{exam +quiz+ tarea+ proyec+cotidi }} %</td>
+          </tr>
+        </tbody>
+      </table>
+</div>

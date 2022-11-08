@@ -11,9 +11,10 @@ class CurseRouter{
     config(): void{
         this.router.get('/', curseController.getCurses);
         this.router.get('/:id', curseController.getOneCurse);
+        this.router.get('/getById/:id', curseController.getOneCursebyID);
         this.router.post('/', curseController.createCurse);
         this.router.delete('/:id',curseController.delete);
-        this.router.put('/:id',curseController.update);
+        this.router.put('/:id',curseController.updateCurse);
     }
 }
 

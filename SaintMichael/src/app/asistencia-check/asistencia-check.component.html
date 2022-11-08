@@ -1,0 +1,49 @@
+<body>
+    <div class="Main-container">
+        <app-nav-amdmi></app-nav-amdmi>
+        <div class="container-elements">
+            <div class="wrap">
+               
+
+                        <span class="title">Consulta de Asistencia</span>
+                        <form class="formt" [formGroup]="date">
+                        <div class="input-group">
+                          <input id="dateOfBirth" formControlName="date" class="date" placeholder="Fecha de Consulta" name="dp" ngbDatepicker #dp="ngbDatepicker" formControlName="date">
+                          <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
+
+                          <div class="form-btn-container">
+                            <button (click)="consulata()" type="submit" class="form-btn">Consultar</button>
+                        </div>
+                        </div>
+                    </form> 
+            
+
+            <br>
+            <br>
+            <br>
+            <br>
+        
+
+            <table>
+                <thead>
+                  <tr>
+                    <th scope="col">Nombre del Estudiante</th>
+                    <th scope="col">Fecha</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of listaAsistencia ">
+                    <td data-label="Account">{{item.nombreEstudiante}}</td>
+                    <td data-label="Due Date">{{item.fecha}}</td>
+                  </tr>
+                </tbody>
+              </table>
+
+
+
+        </div>
+    </div>
+</div>
+
+</body>
+

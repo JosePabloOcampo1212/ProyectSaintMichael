@@ -35,6 +35,10 @@ export class NavAmdmiComponent implements OnInit {
  goProfile(){
   this.router.navigate(['profile']);
  }
+ goHorario(){
+  this.router.navigate(['horario']);
+ }
+ 
  signOut(){
   Swal.fire({
     position: 'top-end',
@@ -55,6 +59,6 @@ export class NavAmdmiComponent implements OnInit {
       }
     });
     
- }
+ } 
  
 }

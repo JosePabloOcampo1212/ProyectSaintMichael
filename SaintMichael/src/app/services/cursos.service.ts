@@ -20,8 +20,16 @@ export class CursosService {
     return this.http.get<Curso2[]>(`${this.API_URI}/curse/${id}`)
   }
 
+  getCursoById(id: number): Observable<Curso2>{
+    return this.http.get<Curso2>(`${this.API_URI}/curse/getById/${id}`)
+
+  }
 
   crearCruso(curso : Curso){
     return this.http.post(`${this.API_URI}/curse`, curso)
+  }
+
+  updateCurso(id: number){
+    return this.http.put(`${this.API_URI}/curse/${id}`,[])
   }
 }

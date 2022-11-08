@@ -15,7 +15,6 @@ export class HomeAdminComponent implements OnInit {
   listCursos: Curso2 [];
   constructor(private cursoService: CursosService, private user: UserService) { 
   this.listCursos= []
-  console.log(this.listCursos)
   }
 
   ngOnInit(): void {
@@ -24,6 +23,7 @@ export class HomeAdminComponent implements OnInit {
     this.cursoService.getUnCurso(idUsuario).subscribe(x => {
      x.forEach((data) => {
       this.listCursos.push(data)
+      
      })
     })
   }

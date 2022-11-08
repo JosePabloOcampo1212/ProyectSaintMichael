@@ -10,9 +10,10 @@ class CurseRouter {
     config() {
         this.router.get('/', curseControllers_1.curseController.getCurses);
         this.router.get('/:id', curseControllers_1.curseController.getOneCurse);
+        this.router.get('/getById/:id', curseControllers_1.curseController.getOneCursebyID);
         this.router.post('/', curseControllers_1.curseController.createCurse);
         this.router.delete('/:id', curseControllers_1.curseController.delete);
-        this.router.put('/:id', curseControllers_1.curseController.update);
+        this.router.put('/:id', curseControllers_1.curseController.updateCurse);
     }
 }
 const curseRoutes = new CurseRouter;

@@ -3,25 +3,18 @@
         <app-nav-amdmi></app-nav-amdmi>
         <div class="container-elements">
             <div class="wrap-register">
-
-
                 <div class="col-md-3" *ngFor="let curso of listCursos">
-                    <div class="card text-center">
-                        <img src="{{curso.fondo}}" class="card-img-top">
-                        <div class="card-body bg-dark text-white d-flex justify-content-between align-items-center" >
-                            
-                            <ul class="list-group list-group-flush">
-                                <p>{{curso.nombreInstitucion}}</p>
-                                <p  >{{curso.nombreCurso}} - {{curso.grupoCurso}}</p>
-                            </ul>
-                                <a href="" class="btn btn-info btn-block">Ir al Curso</a>
-                                
-                        </div>
+                    
+                    <app-curse [idCurso]="curso.idCurso" 
+                    [nombreInstitucion]="curso.nombreInstitucion" 
+                    [grupoCurso]="curso.grupoCurso" 
+                    [nombreCurso]="curso.nombreCurso" 
+                    [fondo]="curso.fondo" 
+                    [idProfesor]="curso.idProfesor" 
+                    [estadoCurso]="curso.estadoCurso" 
+                    ></app-curse>
 
-                    </div>
-            
                 </div>
-
 
             </div>
         </div>

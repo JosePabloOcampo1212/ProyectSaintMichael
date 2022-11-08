@@ -1,0 +1,18 @@
+<body>
+    <div class="Main-container">
+        <app-nav-amdmi></app-nav-amdmi>
+        <div class="container-elements">
+            <div class="wrap">
+               <app-info-student 
+                                [idEstudiante]="student[0].idEstudiante"
+                                [nombre]="student[0].nombre"
+                                [telefono]="student[0].telefono"
+                                [seccion]="student[0].seccion"
+                                [aprendizaje]="student[0].aprendizaje"></app-info-student>
+
+
+                <app-info-notas></app-info-notas>
+            </div>
+        </div>
+    </div>
+</body>

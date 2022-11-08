@@ -1,0 +1,8 @@
+<ng-container *ngIf="showDelete">
+<div class="input-group">
+    <input  class="form-control" placeholder="{{nombre}}" readonly required>
+    <button type="button" (click)="guardarAsistencia()" class="btn btn-outline-success" >Presente</button>
+    <button type="button" (click)="destroy()"  class="btn btn-outline-danger">Ausente</button>
+</div>
+<br>
+</ng-container>

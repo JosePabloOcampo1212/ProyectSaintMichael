@@ -3,6 +3,7 @@ export interface Student {
     Institucion: string;
     telefono : string;
     seccion: string;
+    aprendizaje :string;
     idCurso: any;
 }
 
@@ -12,5 +13,11 @@ export interface Student2 {
     institucion: string;
     telefono : string;
     seccion: string;
+    aprendizaje :string;
     idCurso: any;
+}
+
+export interface StudentSimpli{
+    idEstudiante:any;
+    nombre: string;
 }

@@ -15,20 +15,43 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.studentController = void 0;
 const database_1 = __importDefault(require("../database"));
 class StudentController {
+    createStudent(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield database_1.default.query('INSERT INTO estudiantes set ?', [req.body]);
+            res.json({ text: 'Estudiente guardado' });
+        });
+    }
+    //---------------------------------------------------------------------------------------------
     getCurseEstudent(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            const curso = yield database_1.default.query('SELECT * FROM estudiantes WHERE idCurso = ?', [id], function (error, results, fields) {
+            const curso = yield database_1.default.query('SELECT idEstudiante,nombre FROM estudiantes WHERE idCurso = ?', [id], function (error, results, fields) {
                 if (error)
                     throw error;
                 res.json(results);
             });
         });
     }
-    createStudent(req, res) {
+    //---------------------------------------------------------------------------------------------
+    getEstudentAndID(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query('INSERT INTO estudiantes set ?', [req.body]);
-            res.json({ text: 'Estudiente guardado' });
+            const curso = yield database_1.default.query('SELECT idEstudiante,nombre FROM estudiantes', function (error, results, fields) {
+                console.log(results);
+                if (error)
+                    throw error;
+                res.json(results);
+            });
+        });
+    }
+    //----------------------------------------------------------------------------------------
+    getOneEstudent(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { id } = req.params;
+            const curso = yield database_1.default.query('SELECT * FROM estudiantes WHERE idEstudiante = ?', [id], function (error, results, fields) {
+                if (error)
+                    throw error;
+                res.json(results);
+            });
         });
     }
 }

@@ -1,0 +1,85 @@
+<body>
+    <div class="Main-container">
+        <app-nav-amdmi></app-nav-amdmi>
+        <div class="container-elements">
+            <div class="wrap">
+        
+                    <span class="login-form-title">Horario Disponible</span>
+                    <div class="row border rounded pt-3 pb-3 bg-white" *ngIf="show">
+                        
+                      
+                      
+                          <div class="row">
+                            <div class="col-12 ">
+                              <span class="badge badge-pill border free text-light mr-2">Ocupado</span>
+                              <span class="badge badge-pill ocupated text-light mr-2">No disponible</span>
+                              <span class="badge badge-pill no-available text-dark mr-2">Libre</span>
+                            </div>
+                          </div>
+                      
+                          <div class="row">
+                            <div class="col-12 calendar">
+                      
+                              <div class="row">
+                                <div class="col-2">
+                      
+                                </div>
+                      
+                                <div class="col-1 text-center">
+                                  L
+                                </div>
+                      
+                                <div class="col-1 text-center">
+                                  K
+                                </div>
+                      
+                                <div class="col-1 text-center">
+                                  M
+                                </div>
+                      
+                                <div class="col-1 text-center">
+                                  J
+                                </div>
+                      
+                                <div class="col-1  text-center">
+                                  V
+                                </div>
+                      
+                                <div class="col-1  text-center">
+                                  S
+                                </div>
+                      
+                                <div class="col-1 text-center">
+                                  D
+                                </div>
+                      
+                              </div>
+                      
+                      
+                              <div class="row" *ngFor="let info of data">
+                      
+                                <div class="col-2 border">
+                                  {{info.hour}}
+                                </div>
+                                <div class="col-1 border" [ngClass]="{'no-available': av == 'N', 'free': av == 'L', 'ocupated': av == 'O', 'c-pointer':editable}"
+                                  *ngFor="let av of info.availability; let index = index" (click)="changeAv(info.hour,index)">
+                                </div>
+                      
+                              </div>
+                      
+                      
+                            </div>
+                          </div>
+                          
+                          <div class="login-form-btn-container">
+                            <button  (click)="saveHorario()" class="login-form-btn">Guardar</button>
+                        </div>
+                     
+                      </div>
+                    
+           
+        </div>
+    </div>
+</div>
+
+</body>

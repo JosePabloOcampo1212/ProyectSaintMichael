@@ -34,6 +34,7 @@ export class LoginComponent implements OnInit {
           showConfirmButton: false,
           timer: 2500
         })
+        console.log(response);
         this.router.navigate(['homeAdmi'])
 
       } 

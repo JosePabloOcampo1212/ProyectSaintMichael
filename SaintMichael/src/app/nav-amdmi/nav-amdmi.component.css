@@ -31,7 +31,7 @@ background-position: center center;
 }
 .nav > .nav-links > a:hover {background-color: rgba(0, 0, 0, 0.3);}
 .nav > #nav-check {display: none;}
-@media (max-width:600px) {
+@media (max-width:860px) {
   .nav > .nav-btn {
     display: inline-block;
     position: absolute;

@@ -1,0 +1,160 @@
+<body>
+    <div class="Main-container">
+        <app-nav-amdmi></app-nav-amdmi>
+        <div class="container-elements">
+            <div class="wrap">
+               
+                <div class="wrap-input">
+                  <form class="formt" [formGroup]="idEstudent">
+                    <p class="title">Estudiantes</p>
+                    <select class="form-select" aria-label="Default select example" formControlName="idEstu" >
+                        <option *ngFor="let item of listStudent " [ngValue]="item.idEstudiante" >
+                            {{item.nombre}}
+                        </option>
+                    </select>
+                    
+
+                    <span class="focus-input"></span>
+                    <span class="symbol-input">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                    </span>
+
+                    <div class="form-btn-container">
+                        <button (click)="goEstudent()"  type="submit" class="form-btn">Ir</button>
+                    </div>
+                  </form> 
+                </div>
+                
+               
+                <div class="card">
+
+                    <div class="title">Asistencia</div>
+                  
+                    <div class="icon" (click)="open(content)">
+                        <svg style="color: rgb(119, 198, 252);" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-list" viewBox="0 0 16 16"> <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z" fill="#77c6fc"></path> <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z" fill="#77c6fc"></path> </svg>
+                    </div><!--/icon-->
+
+                  
+                    <a (click)="asistenciaHistoria()" class="btn">Historial de Asistencia</a>
+                  
+                  </div><!--/card-->
+
+
+                  <div class="card">
+
+                    <div class="title">Archivos</div>
+                  
+                    <div class="icon" >
+                        <label >
+                        <input type="file" style="display:none;" (change)="uploadDocument($event)" > 
+                        <svg  style="color: rgb(243, 57, 57);" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><title>ionicons-v5-m</title><polyline points="160 368 32 256 160 144" style="fill:none;stroke:#77c6fc;stroke-linecap:square;stroke-miterlimit:10;stroke-width:42px"></polyline><polyline points="352 368 480 256 352 144" style="fill:none;stroke:#77c6fc;stroke-linecap:square;stroke-miterlimit:10;stroke-width:42px"></polyline><polyline points="192 288.1 256 352 320 288.1" style="fill:none;stroke:#77c6fc;stroke-linecap:square;stroke-miterlimit:10;stroke-width:42px"></polyline><line x1="256" y1="160" x2="256" y2="336.03" style="fill:none;stroke:#77c6fc;stroke-linecap:square;stroke-miterlimit:10;stroke-width:42px"></line></svg>
+                        </label>
+                      </div><!--/icon-->
+
+                  
+                    <a (click)="checkFiles()" class="btn">Ver Archivos</a>
+                  
+                  </div><!--/card-->
+
+
+                  <div class="card">
+
+                    <div class="title2">{{nombreInstitucion}} -- {{grupoCurso}}</div>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                
+                   
+                
+                    <div class="title2">{{nombreCurso}}</div>
+                  
+                    <p></p>
+                    <a (click)=" updateCurso()" class="btn">Archivar Curso</a>
+                    <a (click)="open2(content2)" class="btn" >Evaluacion</a>
+                  
+                  </div><!--/card-->
+
+
+                  
+                  
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <ng-template #content let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">Asistencia</h4>
+          <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="dates">
+            <div class="mb-3">
+              <label for="dateOfBirth">Fecha</label>
+              <div class="input-group">
+                <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker" formControlName="date">
+                <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
+              </div>
+              <br>
+
+              <div *ngFor="let student of listStudent">
+              <app-asistencia [nombre]="student.nombre"
+                            [idEstudiante]="student.idEstudiante"
+                            [idCurso]="idCurso"
+                            [fecha]="dates.value.date" ></app-asistencia>
+             </div>
+
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+        </div>
+      </ng-template>
+
+      <ng-template #content2 let-c="close" let-d="dismiss">
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">Evaluacion</h4>
+          <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="evaluaciones">
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Examenes</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="examenes">
+            </div>
+
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Quices</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="quices">
+            </div>
+
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Tareas</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="tareas">
+            </div>
+            
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Proyectos</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="proyectos">
+            </div>
+
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Cotidiano</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="cotidiano">
+            </div>
+
+            
+
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark" (click)="pt()" (click)="c('Save click')">Save</button>
+        </div>
+      </ng-template>
+
+
+</body>

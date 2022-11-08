@@ -30,7 +30,16 @@ import {CursosService} from './services/cursos.service';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { ProfileComponent } from './profile/profile.component';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
-
+import { CurseHomeComponent } from './curse-home/curse-home.component';
+import { CurseComponent } from './curse/curse.component';
+import { AsistenciaComponent } from './asistencia/asistencia.component';
+import { AsistenciaCheckComponent } from './asistencia-check/asistencia-check.component';
+import { HomeStudentComponent } from './home-student/home-student.component';
+import { InfoStudentComponent } from './info-student/info-student.component';
+import { InfoNotasComponent } from './info-notas/info-notas.component';
+import { MdbCheckboxModule } from 'mdb-angular-ui-kit/checkbox';
+import { FilesCheckComponent } from './files-check/files-check.component';
+import { HorarioComponent } from './horario/horario.component';
 
 
 
@@ -43,7 +52,16 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     HomeAdminComponent,
     EstudentRegisterComponent,
     GradeRegisterComponent,
-    ProfileComponent
+    ProfileComponent,
+    CurseHomeComponent,
+    CurseComponent,
+    AsistenciaComponent,
+    AsistenciaCheckComponent,
+    HomeStudentComponent,
+    InfoStudentComponent,
+    InfoNotasComponent,
+    FilesCheckComponent,
+    HorarioComponent
   ],
   imports: [
     BrowserModule,
@@ -56,6 +74,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     MatCardModule,
     MatDialogModule,
     MatFormFieldModule,
+    MdbCheckboxModule,
     MatInputModule,
     HttpClientModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),

@@ -42,6 +42,23 @@
                             <i class="fa fa-envelope" aria-hidden="true"></i>
                         </span>
                     </div>
+
+                    <div class="wrap-input">
+                        <span class="">Aprendizaje</span>
+
+                        <select class="form-select" aria-label="Default select example" formControlName="aprendizaje" >
+                            <option *ngFor="let item of aprendizaje " [ngValue]="item[1]">
+                                {{ item[0]}}
+                            </option>
+                          </select>
+                        
+                        <span class="focus-input"></span>
+                        <span class="symbol-input">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
+                    </div>
+
+
                     
                     <div class="wrap-input">
                         <span class="">Curso</span>

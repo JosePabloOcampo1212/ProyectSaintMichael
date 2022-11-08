@@ -7,6 +7,7 @@ import {Student,Student2} from '../models/student';
 import {StudentService} from '../services/student.service';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import {getFirestore, collection, getDocs} from '@angular/fire/firestore';
 
 
 @Component({
@@ -17,14 +18,18 @@ import Swal from 'sweetalert2';
 export class EstudentRegisterComponent implements OnInit {
   listCursos: Curso2 [];
   registrarEstudiante: FormGroup;
+  aprendizaje: any [][];
   constructor(private fb: FormBuilder, private cursoService: CursosService, private user: UserService, private studentService: StudentService,
     private router: Router, private userService: UserService) {
-    this.listCursos= []
+    this.listCursos= [];
+    this.aprendizaje = [];
+    this.consultAprendi();
     this.registrarEstudiante = this.fb.group({
       nombre: ['', Validators.required],
       intitucion: ['', Validators.required],
       telefono: ['',Validators.required],
       seccion: ['',Validators.required],
+      aprendizaje: ['', Validators.required],
       curso: ['',Validators.required]
     })
     this.getCurso()
@@ -40,6 +45,7 @@ export class EstudentRegisterComponent implements OnInit {
       Institucion: this.registrarEstudiante.value.intitucion,
       telefono : this.registrarEstudiante.value.telefono,
       seccion: this.registrarEstudiante.value.seccion,
+      aprendizaje: this.registrarEstudiante.value.aprendizaje,
       idCurso: this.registrarEstudiante.value.curso
     }
     
@@ -65,6 +71,16 @@ export class EstudentRegisterComponent implements OnInit {
      })
     })
     
+  }
+
+  async consultAprendi(){
+    const db = getFirestore()
+    const querySnapshot = await getDocs(collection(db, "aprendizaje"));
+    querySnapshot.forEach((doc) => {
+      this.aprendizaje.push([doc.data()['nombre'],doc.data()['url']])
+    });
+    
+
   }
 
 }

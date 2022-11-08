@@ -4,6 +4,13 @@ import cors from 'cors';
 
 import curseRoutes from './routes/curseRoutes';
 import studentRoutes from './routes/studentRoutes';
+import asistenciaRoutes from './routes/asistenciaRoutes';
+import notasRouters from './routes/notasRoutes';
+import evaluCursoRouter from './routes/evaluCursoRouter';
+import calificacionesRoutes from './routes/calificacionesRoutes';
+
+
+
 
 class Server{
     public app: Application;
@@ -25,7 +32,10 @@ class Server{
     routes(): void {
         this.app.use('/api/curse', curseRoutes);
         this.app.use('/api/student', studentRoutes);
-
+        this.app.use('/api/asistencia', asistenciaRoutes);
+        this.app.use('/api/notas', notasRouters);
+        this.app.use('/api/evaluCurso', evaluCursoRouter);
+        this.app.use('/api/calificaciones',calificacionesRoutes)
         
     }
     start(): void {
